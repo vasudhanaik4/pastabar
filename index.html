@@ -5,76 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pasta Bar</title>
 <style>
-body { margin:0; font-family: 'Segoe UI', sans-serif; background:#fff; color:#333; }
-header { background:url("images/cart.jpg") center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; }
-header h1 { background: rgba(0,0,0,0.6); padding:20px 30px; border-radius:10px; font-size:3em; }
+body { 
+    margin:0; 
+    font-family: 'Segoe UI', sans-serif; 
+    background:#fff; 
+    color:#333; 
+}
 
-section { padding:50px 20px; max-width:1100px; margin:auto; }
-h2 { text-align:center; color:#2f4f2f; margin-bottom:30px; }
+header { 
+    background: url("cart.jpg") center/cover no-repeat, url("logo.jpg") center/20% no-repeat;
+    height:60vh; 
+    display:flex; 
+    flex-direction: column;
+    align-items:center; 
+    justify-content:center; 
+    color:white; 
+    text-align:center; 
+    position: relative;
+}
 
-.about, .franchise, .contact { text-align:center; font-size:18px; }
+header h1 { 
+    background: rgba(0,0,0,0.6); 
+    padding:20px 30px; 
+    border-radius:10px; 
+    font-size:3em; 
+}
 
-.menu-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.menu-card { border:1px solid #ddd; border-radius:10px; width:220px; text-align:center; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-.menu-card img { width:100%; height:200px; object-fit:cover; }
-.menu-card h3 { margin:10px 0; color:#2f4f2f; }
-.menu-card p { margin:5px 0; font-weight:bold; }
+header img.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
 
-footer { background:#2f4f2f; color:white; text-align:center; padding:15px; }
+section { 
+    padding:50px 20px; 
+    max-width:1100px; 
+    margin:auto; 
+}
 
-@media(max-width:600px){ .menu-grid { flex-direction:column; align-items:center; } }
+h2 { 
+    text-align:center; 
+    color:#2f4f2f; 
+    margin-bottom:30px; 
+}
+
+.about, .franchise, .contact { 
+    text-align:center; 
+    font-size:18px; 
+}
+
+.menu-grid { 
+    display:flex; 
+    flex-wrap:wrap; 
+    justify-content:center; 
+    gap:20px; 
+}
+
+.menu-card { 
+    border:1px solid #ddd; 
+    border-radius:10px; 
+    width:220px; 
+    text-align:center; 
+    overflow:hidden; 
+    box-shadow:0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.menu-card img { 
+    width:100%; 
+    height:200px; 
+    object-fit:cover; 
+}
+
+.menu-card h3 { 
+    margin:10px 0; 
+    color:#2f4f2f; 
+}
+
+.menu-card p { 
+    margin:5px 0; 
+    font-weight:bold; 
+}
+
+footer { 
+    background:#2f4f2f; 
+    color:white; 
+    text-align:center; 
+    padding:15px; 
+}
+
+@media(max-width:600px){ 
+    .menu-grid { 
+        flex-direction:column; 
+        align-items:center; 
+    } 
+    header h1 { font-size:2em; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Pasta Bar<br><small>Fresh Italian Pasta Food Cart</small></h1>
+    <img src="logo.jpg" alt="Pasta Bar Logo" class="logo">
+    <h1>Pasta Bar<br><small>Fresh Italian Pasta Food Cart</small></h1>
 </header>
 
 <section class="about">
-  <h2>About Us</h2>
-  <p>Pasta Bar started as a small food cart with a big love for fresh, delicious Italian pasta. We serve a fresh salad to keep the menu simple, balanced, and satisfying.</p>
-  <p><strong>Founder:</strong> Naveen Naik</p>
+    <h2>About Us</h2>
+    <p>Pasta Bar started as a small food cart with a big love for fresh, delicious Italian pasta. We serve a fresh salad to keep the menu simple, balanced, and satisfying.</p>
+    <p><strong>Founder:</strong> Naveen Naik</p>
 </section>
 
 <section>
-  <h2>Our Menu</h2>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <img src="images/whitesauce.jpg" alt="White Sauce Pasta">
-      <h3>White Sauce Pasta</h3>
-      <p>₹80 (Regular)</p>
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+        <div class="menu-card">
+            <img src="Whitesauce.jpg" alt="White Sauce Pasta">
+            <h3>White Sauce Pasta</h3>
+            <p>₹80 (Regular)</p>
+        </div>
+        <div class="menu-card">
+            <img src="Redsauce.jpg" alt="Red Sauce Pasta">
+            <h3>Red Sauce Pasta</h3>
+            <p>₹80 (Regular)</p>
+        </div>
+        <div class="menu-card">
+            <img src="Pinksauce.jpg" alt="Pink Sauce Pasta">
+            <h3>Pink Sauce Pasta</h3>
+            <p>₹100 (Regular)</p>
+        </div>
+        <div class="menu-card">
+            <img src="Salad.JPG" alt="Italian Creamy Veg Salad">
+            <h3>Italian Creamy Veg Salad</h3>
+            <p>₹80</p>
+        </div>
     </div>
-    <div class="menu-card">
-      <img src="images/redsauce.jpg" alt="Red Sauce Pasta">
-      <h3>Red Sauce Pasta</h3>
-      <p>₹80 (Regular)</p>
-    </div>
-    <div class="menu-card">
-      <img src="images/pinksauce.jpg" alt="Pink Sauce Pasta">
-      <h3>Pink Sauce Pasta</h3>
-      <p>₹100 (Regular)</p>
-    </div>
-    <div class="menu-card">
-      <img src="images/salad.jpg" alt="Italian Creamy Veg Salad">
-      <h3>Italian Creamy Veg Salad</h3>
-      <p>₹80</p>
-    </div>
-  </div>
 </section>
 
 <section class="franchise">
-  <h2>Franchise Opportunity</h2>
-  <p>Interested in starting your own Pasta Bar? Franchise details will be updated soon.</p>
+    <h2>Franchise Opportunity</h2>
+    <p>Interested in starting your own Pasta Bar? Franchise details will be updated soon.</p>
 </section>
 
 <section class="contact">
-  <h2>Visit / Contact Us</h2>
-  <p>Phone, WhatsApp & Location coming soon.</p>
+    <h2>Visit / Contact Us</h2>
+    <p>Phone, WhatsApp & Location coming soon.</p>
 </section>
 
 <footer>
-  <p>© 2025 Pasta Bar | Made with ❤️ in India</p>
+    <p>© 2025 Pasta Bar | Made with ❤️ in India</p>
 </footer>
 
 </body>
