@@ -50,7 +50,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 header {
-    background:url("cart.jpg") center/cover no-repeat;
+    background: url("cart.jpg") center/cover no-repeat;
     height:70vh;
     display:flex;
     flex-direction:column;
@@ -59,7 +59,12 @@ header {
     text-align:center;
     color:white;
     position:relative;
+
+    /* Add these lines for zoom effect */
+    background-size: 150%;   /* zoom in by scaling up */
+    background-position: center center; /* keep it centered */
 }
+    
 header::after {
     content:"";
     position:absolute;
