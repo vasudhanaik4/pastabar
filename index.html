@@ -5,142 +5,214 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pasta Bar</title>
 <style>
-body { 
-    margin:0; 
-    font-family: 'Segoe UI', sans-serif; 
-    background:#fff; 
-    color:#333; 
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#fff;
+    color:#333;
 }
 
-header { 
-    background:#f8f8f8;
-    height:60vh; 
-    display:flex; 
-    flex-direction: column;
-    align-items:center; 
-    justify-content:center; 
-    text-align:center; 
-    position: relative;
+/* Navigation */
+nav {
+    background:#2f4f2f;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+nav .logo {
+    display:flex;
+    align-items:center;
+}
+nav .logo img {
+    width:60px;
+    height:auto;
+    border-radius:8px;
+    margin-right:10px;
+}
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+nav ul li a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav ul li a:hover {
+    text-decoration:underline;
 }
 
-header h1 { 
-    margin-top:15px;
-    font-size:3em; 
+/* Hero Section */
+header {
+    background:url("cart.jpg") center/cover no-repeat;
+    height:70vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+header::after {
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,0.5);
+}
+header h1, header p {
+    position:relative;
+    z-index:1;
+}
+header h1 {
+    font-size:3em;
+    margin-bottom:10px;
+}
+header p {
+    font-size:1.2em;
+}
+
+/* Sections */
+section {
+    padding:60px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+h2 {
+    text-align:center;
     color:#2f4f2f;
+    margin-bottom:30px;
 }
 
-header img.logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: 2px solid #2f4f2f;
-}
-
-section { 
-    padding:50px 20px; 
-    max-width:1100px; 
-    margin:auto; 
-}
-
-h2 { 
-    text-align:center; 
-    color:#2f4f2f; 
-    margin-bottom:30px; 
-}
-
-.about, .franchise, .contact { 
-    text-align:center; 
-    font-size:18px; 
-}
-
+/* About */
 .about img {
     width:200px;
     height:auto;
     border-radius:50%;
-    margin:20px auto;
     display:block;
+    margin:20px auto;
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-
-.menu-grid { 
-    display:flex; 
-    flex-wrap:wrap; 
-    justify-content:center; 
-    gap:20px; 
-}
-
-.menu-card { 
-    border:1px solid #ddd; 
-    border-radius:10px; 
-    width:220px; 
-    text-align:center; 
-    overflow:hidden; 
-    box-shadow:0 4px 10px rgba(0,0,0,0.1); 
-}
-
-.menu-card img { 
-    width:100%; 
-    height:200px; 
-    object-fit:cover; 
-}
-
-.menu-card h3 { 
-    margin:10px 0; 
-    color:#2f4f2f; 
-}
-
-.menu-card p { 
-    margin:5px 0; 
-    font-weight:bold; 
-}
-
-.middle-banner {
+.about p {
     text-align:center;
-    margin:40px 0;
+    font-size:18px;
+    line-height:1.6;
 }
-.middle-banner img {
-    width:300px;
-    height:auto;
+
+/* Menu */
+.menu-grid {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+.menu-card {
+    border:1px solid #ddd;
     border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    width:220px;
+    text-align:center;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.menu-card img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+.menu-card h3 {
+    margin:10px 0;
+    color:#2f4f2f;
+}
+.menu-card p {
+    margin:5px 0;
+    font-weight:bold;
 }
 
-footer { 
-    background:#2f4f2f; 
-    color:white; 
-    text-align:center; 
-    padding:15px; 
+/* Reviews */
+.reviews {
+    text-align:center;
+}
+.reviews a {
+    display:inline-block;
+    background:#2f4f2f;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.reviews a:hover {
+    background:#3f6f3f;
 }
 
-@media(max-width:600px){ 
-    .menu-grid { 
-        flex-direction:column; 
-        align-items:center; 
-    } 
+/* Contact */
+.contact p {
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+}
+.contact a {
+    color:#2f4f2f;
+    text-decoration:none;
+}
+.contact a:hover {
+    text-decoration:underline;
+}
+
+/* Footer */
+footer {
+    background:#2f4f2f;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+@media(max-width:600px){
+    nav ul { flex-direction:column; gap:10px; }
     header h1 { font-size:2em; }
+    .menu-grid { flex-direction:column; align-items:center; }
 }
 </style>
 </head>
 <body>
 
+<!-- Navigation -->
+<nav>
+    <div class="logo">
+        <img src="logo.jpg" alt="Pasta Bar Logo">
+        <span>Pasta Bar</span>
+    </div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
 <header>
-    <img src="logo.jpg" alt="Pasta Bar Logo" class="logo">
-    <h1>Pasta Bar<br><small>Fresh Italian Pasta</small></h1>
+    <h1>Welcome to Pasta Bar</h1>
+    <p>Fresh Italian Pasta • Food Cart Experience</p>
 </header>
 
-<div class="middle-banner">
-    <img src="cart.jpg" alt="Pasta Bar Food Cart">
-</div>
-
-<section class="about">
+<!-- About -->
+<section id="about" class="about">
     <h2>About Us</h2>
     <img src="Founder.jpg" alt="Founder Image">
-    <p>Pasta Bar started as a small food cart with a big love for fresh, delicious Italian pasta. We serve a fresh salad to keep the menu simple, balanced, and satisfying.</p>
+    <p>Pasta Bar started as a humble food cart with a big love for authentic Italian pasta. 
+       We keep our menu simple, balanced, and satisfying — offering pasta and fresh salad made with care.</p>
     <p><strong>Founder:</strong> Naveen Naik</p>
 </section>
 
-<section>
+<!-- Menu -->
+<section id="menu">
     <h2>Our Menu</h2>
     <div class="menu-grid">
         <div class="menu-card">
@@ -166,12 +238,17 @@ footer {
     </div>
 </section>
 
-<section class="franchise">
-    <h2>Franchise Opportunity</h2>
-    <p>Interested in starting your own Pasta Bar? Franchise details will be updated soon.</p>
+<!-- Reviews -->
+<section id="reviews" class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>See what our customers are saying on Google:</p>
+    <a href="https://www.google.com/search?sca_esv=1125dd52a45e0c56&sxsrf=AE3TifNb-wprPgFnH_V2Pvyoteda_28gMQ:1766771679639&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwjx0_Sy6duRAxU_VmwGHegFKLIQ0bkNegQIMxAD&biw=1272&bih=668&dpr=1.5" target="_blank">
+        View Google Reviews
+    </a>
 </section>
 
-<section class="contact">
+<!-- Contact -->
+<section id="contact" class="contact">
     <h2>Visit / Contact Us</h2>
     <p>#01 Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
     <p>Email: <a href="mailto:naveenjai0105@gmail.com">naveenjai0105@gmail.com</a></p>
@@ -179,6 +256,7 @@ footer {
     <p>Instagram: <a href="https://instagram.com/pasta_bar_01" target="_blank">@pasta_bar_01</a></p>
 </section>
 
+<!-- Footer -->
 <footer>
     <p>© 2025 Pasta Bar | Made with ❤️ in India</p>
 </footer>
