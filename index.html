@@ -13,30 +13,28 @@ body {
 }
 
 header { 
-    background: url("cart.jpg") center/cover no-repeat, url("logo.jpg") center/20% no-repeat;
+    background:#f8f8f8;
     height:60vh; 
     display:flex; 
     flex-direction: column;
     align-items:center; 
     justify-content:center; 
-    color:white; 
     text-align:center; 
     position: relative;
 }
 
 header h1 { 
-    background: rgba(0,0,0,0.6); 
-    padding:20px 30px; 
-    border-radius:10px; 
+    margin-top:15px;
     font-size:3em; 
+    color:#2f4f2f;
 }
 
 header img.logo {
-    width: 100px;
+    width: 120px;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid #2f4f2f;
 }
 
 section { 
@@ -54,6 +52,15 @@ h2 {
 .about, .franchise, .contact { 
     text-align:center; 
     font-size:18px; 
+}
+
+.about img {
+    width:200px;
+    height:auto;
+    border-radius:50%;
+    margin:20px auto;
+    display:block;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .menu-grid { 
@@ -88,6 +95,17 @@ h2 {
     font-weight:bold; 
 }
 
+.middle-banner {
+    text-align:center;
+    margin:40px 0;
+}
+.middle-banner img {
+    width:300px;
+    height:auto;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
 footer { 
     background:#2f4f2f; 
     color:white; 
@@ -108,11 +126,16 @@ footer {
 
 <header>
     <img src="logo.jpg" alt="Pasta Bar Logo" class="logo">
-    <h1>Pasta Bar<br><small>Fresh Italian Pasta Food Cart</small></h1>
+    <h1>Pasta Bar<br><small>Fresh Italian Pasta</small></h1>
 </header>
+
+<div class="middle-banner">
+    <img src="cart.jpg" alt="Pasta Bar Food Cart">
+</div>
 
 <section class="about">
     <h2>About Us</h2>
+    <img src="Founder.jpg" alt="Founder Image">
     <p>Pasta Bar started as a small food cart with a big love for fresh, delicious Italian pasta. We serve a fresh salad to keep the menu simple, balanced, and satisfying.</p>
     <p><strong>Founder:</strong> Naveen Naik</p>
 </section>
@@ -150,7 +173,10 @@ footer {
 
 <section class="contact">
     <h2>Visit / Contact Us</h2>
-    <p>Phone, WhatsApp & Location coming soon.</p>
+    <p>#01 Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
+    <p>Email: <a href="mailto:naveenjai0105@gmail.com">naveenjai0105@gmail.com</a></p>
+    <p>Contact: 7892520467</p>
+    <p>Instagram: <a href="https://instagram.com/pasta_bar_01" target="_blank">@pasta_bar_01</a></p>
 </section>
 
 <footer>
