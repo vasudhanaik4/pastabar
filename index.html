@@ -140,14 +140,14 @@
     display:block;
   }
 
-  /* Reviews section (background set to review.jpg) */
+  /* Reviews section (background set to review.png) */
   .reviews-block{
     max-width:900px;
     margin:12px auto 22px;
     text-align:center;
     padding:18px;
     border-radius:10px;
-    background: url("review.jpg") center/cover no-repeat;
+    background: url("review.png") center/cover no-repeat;
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat;
@@ -185,7 +185,7 @@
   footer{
     background:var(--dark-green);
     color:var(--footer-text);
-    padding:24px 16px;
+    padding:20px 14px;
     margin-top:12px;
   }
   .footer-grid{
@@ -219,19 +219,20 @@
   }
   .footer-line a{color:var(--footer-text);text-decoration:underline}
   .footer-bottom{
-    text-align:center;margin-top:14px;color:#e6e6e6;font-size:13px;
+    text-align:center;margin-top:10px;color:#e6e6e6;font-size:13px;
   }
 
-  /* Responsive adjustments */
+  /* Mobile adjustments to reduce large gaps between footer columns and footer-bottom */
   @media (max-width:900px){
     .menu-extra img{width:360px}
     .about{flex-direction:column;text-align:center;padding:24px}
     .about img{width:150px}
     .reviews-block{margin:10px auto 18px;padding:14px}
-    footer{padding:20px 12px}
-    .footer-grid{gap:12px}
-    .footer-col{min-width:unset}
-    .footer-line{gap:8px;font-size:14px}
+    footer{padding:18px 12px}
+    .footer-grid{gap:10px}
+    .footer-col{min-width:unset;margin-bottom:8px}
+    .footer-line{gap:8px;font-size:14px;margin:4px 0}
+    .footer-bottom{margin-top:8px;font-size:13px}
     .menu-card{width:48%}
   }
 
@@ -241,11 +242,15 @@
     header{height:56vh}
     header h1{font-size:1.8rem}
     .menu-extra img{width:92%}
-    .footer-grid{flex-direction:column;gap:10px}
-    .footer-col{margin-bottom:4px}
-    .footer-bottom{margin-top:10px;font-size:13px}
-    section{padding:24px 14px;margin-bottom:12px}
-    .about{padding:18px}
+    .footer-grid{flex-direction:column;gap:8px}
+    .footer-col{margin-bottom:6px}
+    .footer-bottom{margin-top:6px;font-size:13px}
+    section{padding:20px 14px;margin-bottom:12px}
+    .about{padding:16px}
+    /* make footer columns compact on small screens */
+    .footer-col{padding:6px 0}
+    .footer-line img.icon{width:18px;height:18px;flex:0 0 18px}
+    .footer-line{gap:8px;font-size:13px;margin:4px 0}
   }
 </style>
 </head>
@@ -315,7 +320,7 @@
     </div>
   </section>
 
-  <!-- Reviews (background set to review.jpg) -->
+  <!-- Reviews (background set to review.png) -->
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
     <div class="reviews-inner">
       <h2 id="reviews-heading">Review</h2>
@@ -389,3 +394,4 @@
 
 </body>
 </html>
+
