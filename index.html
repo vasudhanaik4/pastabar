@@ -7,7 +7,7 @@
 <style>
   :root{
     --dark-green:#2f4f2f;
-    --accent:#FFD700;
+    --accent:#FFD700; /* yellow accent for Click here and Review heading */
     --white:#ffffff;
     --text:#333;
     --footer-text:#ffffff;
@@ -162,10 +162,10 @@
     position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:10px;
   }
   .reviews-inner{position:relative;z-index:2;padding:8px}
-  /* Review heading in green bold */
+  /* Review heading in yellow bold as requested */
   .reviews-block h2{
     margin:0 0 8px;
-    color:var(--dark-green);
+    color:var(--accent);
     font-weight:700;
   }
   .reviews-block p{margin:6px 0;font-size:16px;color:#fff}
@@ -243,12 +243,10 @@
     header h1{font-size:1.8rem}
     .menu-extra img{width:92%}
     .footer-grid{flex-direction:column;gap:8px}
-    .footer-col{margin-bottom:6px}
+    .footer-col{margin-bottom:6px;padding:6px 0}
     .footer-bottom{margin-top:6px;font-size:13px}
     section{padding:20px 14px;margin-bottom:12px}
     .about{padding:16px}
-    /* make footer columns compact on small screens */
-    .footer-col{padding:6px 0}
     .footer-line img.icon{width:18px;height:18px;flex:0 0 18px}
     .footer-line{gap:8px;font-size:13px;margin:4px 0}
   }
@@ -394,4 +392,3 @@
 
 </body>
 </html>
-
