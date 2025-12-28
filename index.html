@@ -51,6 +51,7 @@
     text-align:center;
     color:var(--white);
     background: url("background.jpg") center/cover no-repeat;
+    margin-bottom:40px; /* space so header background doesn't collide with next section */
   }
   header::before{
     content:"";
@@ -58,6 +59,7 @@
     background:url("cart.jpg") center/contain no-repeat;
     background-size:contain;
     pointer-events:none;
+    opacity:0.95;
   }
   header::after{
     content:"";
@@ -70,7 +72,13 @@
   .highlight{color:var(--accent)}
 
   /* Sections */
-  section{padding:56px 20px;max-width:1100px;margin:0 auto}
+  section{
+    padding:56px 20px;
+    max-width:1100px;
+    margin:0 auto 40px; /* bottom margin to separate backgrounds */
+    position:relative;
+    z-index:1;
+  }
   h2{color:var(--dark-green);text-align:center;margin-bottom:22px}
 
   /* About / Founder */
@@ -80,9 +88,20 @@
     align-items:center;
     justify-content:center;
     background:url("founderback.jpg") center/cover no-repeat;
-    padding:40px;
+    background-position: center top;
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding:60px 40px;
     border-radius:10px;
     color:var(--text);
+    box-shadow:0 8px 30px rgba(0,0,0,0.06);
+  }
+  .about::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;top:0;bottom:0;
+    border-radius:10px;
+    pointer-events:none;
   }
   .about img{width:200px;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
   .about .text{max-width:640px}
@@ -100,7 +119,7 @@
   .menu-card img{width:100%;height:200px;object-fit:cover;display:block}
   .menu-card h3{margin:10px 0;color:var(--dark-green)}
 
-  /* pasta-menu with background - expanded coverage */
+  /* pasta-menu with background - expanded coverage and spacing */
   .menu-extra{
     margin-top:36px;
     display:flex;
@@ -108,18 +127,20 @@
   }
   .menu-extra .menu-bg{
     background:url("menu-background.jpg") center/cover no-repeat;
+    background-position:center;
     background-size:cover;
-    padding:40px 48px;
+    background-repeat:no-repeat;
+    padding:48px 64px; /* increased padding so background covers more outer area */
     border-radius:12px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    margin-bottom:24px; /* extra space below to avoid collision with next section */
   }
-  /* pasta-menu image slightly smaller as requested */
   .menu-extra img{
-    width:520px;
-    max-width:92vw;
+    width:520px; /* slightly smaller as requested earlier */
+    max-width:94vw;
     height:auto;
     border-radius:10px;
     box-shadow:0 8px 24px rgba(0,0,0,0.12);
@@ -129,27 +150,30 @@
   /* Reviews section (after menu) with background image review.jpg */
   .reviews-block{
     max-width:900px;
-    margin:36px auto 0;
+    margin:48px auto 0; /* extra top margin to separate from menu background */
     text-align:center;
     padding:28px;
     border-radius:10px;
     background: url("review.jpg") center/cover no-repeat;
+    background-position:center;
     background-size:cover;
+    background-repeat:no-repeat;
     color:#fff;
     position:relative;
     overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,0.08);
   }
   /* subtle dark overlay for readability */
   .reviews-block::after{
     content:"";
     position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:10px;
   }
-  .reviews-inner{position:relative;z-index:2}
+  .reviews-inner{position:relative;z-index:2;padding:18px}
   .reviews-block h2{margin:0 0 10px;color:#fff}
   .reviews-block p{margin:6px 0;font-size:16px;color:#fff}
   /* Click here bold and not underlined; link after it underlined */
   .reviews-block strong{font-weight:700;text-decoration:none;color:#fff}
-  .reviews-block a{color:#fff;text-decoration:underline}
+  .reviews-block .reviews-link{color:#fff;text-decoration:underline;margin-left:8px}
 
   /* Footer */
   footer{
@@ -266,7 +290,7 @@
     </div>
 
     <div class="menu-extra" aria-hidden="false">
-      <div class="menu-bg">
+      <div class="menu-bg" role="img" aria-label="Menu background">
         <img src="pasta-menu.jpg" alt="Full Pasta Menu">
       </div>
     </div>
@@ -276,7 +300,7 @@
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
     <div class="reviews-inner">
       <h2 id="reviews-heading">Review</h2>
-      <p><strong>Click here</strong> - <a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
+      <p><strong>Click here</strong> - <a class="reviews-link" href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
     </div>
   </section>
 
