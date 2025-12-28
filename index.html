@@ -1,3 +1,15 @@
+### Layout and spacing fixes
+
+Below is the **final full HTML/CSS** with the spacing and background collision fixes you requested:
+
+- **Reduced space** between **About** and **Our Menu**.  
+- **Reduced space** between **Pasta Menu** and **Reviews**.  
+- **Added space** between **Reviews** and **Footer**.  
+- Background images are isolated with extra padding/margins and clear stacking so they don't visually collide.
+
+Copy this file and replace your current page. Make sure the image files referenced (`background.jpg`, `cart.jpg`, `founderback.jpg`, `menu-background.jpg`, `pasta-menu.jpg`, `review.jpg`, `address.jpg`, `location.png`, `phone.png`, `email.jpg`, `timing.png`, `insta.jpg`, etc.) are in the same folder or update paths accordingly.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +63,7 @@
     text-align:center;
     color:var(--white);
     background: url("background.jpg") center/cover no-repeat;
-    margin-bottom:40px; /* space so header background doesn't collide with next section */
+    margin-bottom:28px; /* space so header background doesn't collide with next section */
   }
   header::before{
     content:"";
@@ -71,47 +83,40 @@
   header p{margin:0;font-size:1.05rem}
   .highlight{color:var(--accent)}
 
-  /* Sections */
+  /* Sections - tightened vertical spacing */
   section{
-    padding:56px 20px;
+    padding:40px 20px;            /* reduced from 56px to 40px */
     max-width:1100px;
-    margin:0 auto 40px; /* bottom margin to separate backgrounds */
+    margin:0 auto 20px;           /* smaller bottom margin between sections */
     position:relative;
     z-index:1;
   }
-  h2{color:var(--dark-green);text-align:center;margin-bottom:22px}
+  h2{color:var(--dark-green);text-align:center;margin-bottom:18px}
 
   /* About / Founder */
   .about{
     display:flex;
-    gap:32px;
+    gap:24px;                     /* slightly smaller gap */
     align-items:center;
     justify-content:center;
     background:url("founderback.jpg") center/cover no-repeat;
-    background-position: center top;
+    background-position:center top;
     background-size:cover;
     background-repeat:no-repeat;
-    padding:60px 40px;
+    padding:36px;                 /* reduced padding to tighten vertical space */
     border-radius:10px;
     color:var(--text);
     box-shadow:0 8px 30px rgba(0,0,0,0.06);
   }
-  .about::after{
-    content:"";
-    position:absolute;
-    left:0;right:0;top:0;bottom:0;
-    border-radius:10px;
-    pointer-events:none;
-  }
-  .about img{width:200px;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+  .about img{width:180px;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
   .about .text{max-width:640px}
   .about blockquote{
-    margin:18px 0 0;padding-left:14px;border-left:4px solid var(--accent);
+    margin:14px 0 0;padding-left:12px;border-left:4px solid var(--accent);
     color:#444;font-style:italic;
   }
 
   /* Menu */
-  .menu-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+  .menu-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
   .menu-card{
     width:220px;border-radius:10px;overflow:hidden;background:#fff;border:1px solid #e6e6e6;
     box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center;
@@ -119,9 +124,9 @@
   .menu-card img{width:100%;height:200px;object-fit:cover;display:block}
   .menu-card h3{margin:10px 0;color:var(--dark-green)}
 
-  /* pasta-menu with background - expanded coverage and spacing */
+  /* pasta-menu with background - ensure spacing and no collision */
   .menu-extra{
-    margin-top:36px;
+    margin-top:18px;              /* reduced gap above pasta-menu */
     display:flex;
     justify-content:center;
   }
@@ -130,16 +135,16 @@
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat;
-    padding:48px 64px; /* increased padding so background covers more outer area */
+    padding:28px 36px;            /* reduced padding so background doesn't push too far */
     border-radius:12px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     box-shadow:0 8px 24px rgba(0,0,0,0.08);
-    margin-bottom:24px; /* extra space below to avoid collision with next section */
+    margin-bottom:12px;           /* small space below menu background */
   }
   .menu-extra img{
-    width:520px; /* slightly smaller as requested earlier */
+    width:480px;                  /* made a bit smaller as requested */
     max-width:94vw;
     height:auto;
     border-radius:10px;
@@ -150,9 +155,9 @@
   /* Reviews section (after menu) with background image review.jpg */
   .reviews-block{
     max-width:900px;
-    margin:48px auto 0; /* extra top margin to separate from menu background */
+    margin:18px auto 28px;        /* reduced top margin and added bottom margin to create space to footer */
     text-align:center;
-    padding:28px;
+    padding:22px;
     border-radius:10px;
     background: url("review.jpg") center/cover no-repeat;
     background-position:center;
@@ -168,8 +173,8 @@
     content:"";
     position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:10px;
   }
-  .reviews-inner{position:relative;z-index:2;padding:18px}
-  .reviews-block h2{margin:0 0 10px;color:#fff}
+  .reviews-inner{position:relative;z-index:2;padding:8px}
+  .reviews-block h2{margin:0 0 8px;color:#fff}
   .reviews-block p{margin:6px 0;font-size:16px;color:#fff}
   /* Click here bold and not underlined; link after it underlined */
   .reviews-block strong{font-weight:700;text-decoration:none;color:#fff}
@@ -180,6 +185,7 @@
     background:var(--dark-green);
     color:var(--footer-text);
     padding:36px 20px;
+    margin-top:18px;              /* small gap above footer to separate from reviews */
   }
   .footer-grid{
     max-width:1100px;
@@ -372,3 +378,8 @@
 </html>
 ```
 
+If you want even tighter control, I can:
+- Reduce specific `padding` values further, or  
+- Add explicit `margin-top` / `margin-bottom` values to individual sections.  
+
+Tell me which gap you want **smaller** or **larger** and I’ll tweak the exact pixel values.
