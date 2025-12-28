@@ -1,7 +1,3 @@
-**Finalizing HTML code**
-
-Alright, I need to make sure the footer columns are adjacent, and I’ll use the provided image filenames: address.jpg, location.png, phone.png, email.jpg, timing.png, and insta.jpg. For the pasta-menu container, I’ll apply the menu-background image and adjust the size to maybe 560px. I also need to ensure everything is responsive. Once I’ve got all that, I’ll put together the final code block. Let’s get this done!
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,6 +56,7 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
     content:"";
     position:absolute;inset:0;
     background:url("cart.jpg") center/contain no-repeat;
+    background-position:center;
     background-size:contain;
     pointer-events:none;
   }
@@ -104,7 +101,7 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
   .menu-card img{width:100%;height:200px;object-fit:cover;display:block}
   .menu-card h3{margin:10px 0;color:var(--dark-green)}
 
-  /* pasta-menu with background */
+  /* pasta-menu with background - expanded coverage */
   .menu-extra{
     margin-top:36px;
     display:flex;
@@ -112,13 +109,22 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
   }
   .menu-extra .menu-bg{
     background:url("menu-background.jpg") center/cover no-repeat;
-    padding:28px;
+    background-size:cover;
+    padding:48px 64px; /* increased padding so background covers more outer area */
     border-radius:12px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
   }
-  .menu-extra img{width:560px;max-width:92vw;height:auto;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);display:block}
+  .menu-extra img{
+    width:720px;
+    max-width:94vw;
+    height:auto;
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+    display:block;
+  }
 
   /* Reviews section (after menu) */
   .reviews-block{
@@ -132,7 +138,7 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
   }
   .reviews-block h2{margin:0 0 10px;color:var(--dark-green)}
   .reviews-block p{margin:6px 0;font-size:16px}
-  .reviews-block a{color:var(--dark-green);text-decoration:underline}
+  .reviews-block a{color:var(--dark-green);text-decoration:underline;font-weight:700}
 
   /* Footer */
   footer{
@@ -191,7 +197,7 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation (only About, Menu, Reviews, Contact) -->
   <nav>
     <div class="logo">
       <img src="logo.jpg" alt="Pasta Bar logo">
@@ -199,11 +205,10 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
     </div>
 
     <ul class="nav-links" aria-label="Main navigation">
-      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#location">Location</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -259,14 +264,20 @@ Alright, I need to make sure the footer columns are adjacent, and I’ll use the
   <!-- Reviews (replaces Visit / Contact Us) -->
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
     <h2 id="reviews-heading">Review</h2>
-    <p>Click here - <a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
+    <p><a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer"><strong>Click here</strong> - https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
+  </section>
+
+  <!-- Contact (anchor target for nav) -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" style="text-align:center;color:var(--dark-green)">Contact</h2>
+    <p style="text-align:center;margin-top:6px">#01 Kanakapura Main Road, Opposite Fashion Factory<br>Bangalore 560062</p>
   </section>
 
   <!-- Footer -->
   <footer aria-labelledby="footer-heading">
     <div class="footer-grid" role="contentinfo">
 
-      <!-- Contact Info column -->
+      <!-- Contact Info column (two-line address) -->
       <div class="footer-col" aria-label="Contact information">
         <h3>Contact Info</h3>
 
