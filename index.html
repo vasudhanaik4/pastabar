@@ -140,14 +140,14 @@
     display:block;
   }
 
-  /* Reviews section (after menu) with background image review.jpg */
+  /* Reviews section (uses founderback.jpg as background) */
   .reviews-block{
     max-width:900px;
-    margin:12px auto 22px; /* reduced top margin and added bottom margin to create space to footer */
+    margin:12px auto 22px;
     text-align:center;
     padding:18px;
     border-radius:10px;
-    background: url("review.jpg") center/cover no-repeat;
+    background: url("founderback.jpg") center/cover no-repeat;
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat;
@@ -162,22 +162,30 @@
     position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:10px;
   }
   .reviews-inner{position:relative;z-index:2;padding:8px}
-  /* Review heading in green bold as requested */
+  /* Review heading in green bold */
   .reviews-block h2{
     margin:0 0 8px;
     color:var(--dark-green);
     font-weight:700;
   }
   .reviews-block p{margin:6px 0;font-size:16px;color:#fff}
-  /* Click here bold and not underlined; link after it underlined */
-  .reviews-block strong{font-weight:700;text-decoration:none;color:#fff}
-  .reviews-block .reviews-link{color:#fff;text-decoration:underline;margin-left:8px}
+  /* Click here in yellow bold, link after it underlined */
+  .reviews-block strong{
+    font-weight:700;
+    color:var(--accent);
+    text-decoration:none;
+  }
+  .reviews-block .reviews-link{
+    color:#fff;
+    text-decoration:underline;
+    margin-left:8px;
+  }
 
   /* Footer */
   footer{
     background:var(--dark-green);
     color:var(--footer-text);
-    padding:24px 16px; /* reduced padding for mobile friendliness */
+    padding:24px 16px;
     margin-top:12px;
   }
   .footer-grid{
@@ -214,7 +222,7 @@
     text-align:center;margin-top:14px;color:#e6e6e6;font-size:13px;
   }
 
-  /* Responsive adjustments to remove large gaps on mobile */
+  /* Responsive adjustments */
   @media (max-width:900px){
     .menu-extra img{width:360px}
     .about{flex-direction:column;text-align:center;padding:24px}
@@ -307,7 +315,7 @@
     </div>
   </section>
 
-  <!-- Reviews -->
+  <!-- Reviews (uses founderback.jpg as background) -->
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
     <div class="reviews-inner">
       <h2 id="reviews-heading">Review</h2>
@@ -381,4 +389,3 @@
 
 </body>
 </html>
-
