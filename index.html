@@ -1,12 +1,3 @@
-Got it Vasudha — I’ll remove the **Customer Reviews section** completely, keep the footer background **dark green**, and structure the footer into **three adjacent columns** exactly as you described:
-
-1. **Contact Info** — with small icons for Address, Locate Us, Phone, Email  
-2. **Opening Hours** — with clock icon  
-3. **Follow Us** — Instagram logo + handle, and Google Reviews link  
-
-Here’s your **final full code**:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,7 +114,7 @@ h2 {
     color:#333;
 }
 .about img {
-    width:180px; /* bigger founder image */
+    width:180px;
     height:auto;
     border-radius:10px;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
@@ -170,7 +161,7 @@ h2 {
     margin-top:40px;
 }
 .menu-extra img {
-    width:500px; /* bigger pasta menu image */
+    width:500px;
     height:auto;
     border-radius:10px;
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
@@ -240,14 +231,16 @@ footer {
         <span>Pasta Bar</span>
     </div>
     <ul>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#location">Location</a></li>
     </ul>
 </nav>
 
 <!-- Hero -->
-<header>
+<header id="home">
     <h1>Welcome to <span class="highlight">Pasta Bar</span></h1>
     <p>Fresh Italian Pasta • Food Cart Experience</p>
 </header>
@@ -290,20 +283,18 @@ footer {
     </div>
 </section>
 
+<!-- Contact -->
+<section id="contact">
+    <h2>Visit / Contact Us</h2>
+    <p style="text-align:center;">#01 Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
+</section>
+
 <!-- Footer -->
 <footer>
   <div class="footer-grid">
     <div>
       <h3>Contact Info</h3>
-      <p><img src="location-icon.png" class="icon"> Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
-      <p><img src="map-icon.png" class="icon"> <a href="https://maps.app.goo.gl/jdeEJNWJVLsubh8D8" target="_blank">Locate Us</a></p>
-      <p><img src="phone-icon.png" class="icon"> <a href="tel:7892520467">7892520467</a></p>
-      <p><img src="email-icon.png" class="icon"> <a href="mailto:naveenjai0105@gmail.com">naveenjai0105@gmail.com</a></p>
-    </div>
-    <div>
-      <h3>Opening Hours</h3>
-      <p><img src="clock-icon.png" class="icon"> Monday to Sunday</p>
-      <p>6 PM to 11:30 PM</p>
-    </div>
-    <div>
-      <
+      <p><img src="address.jpg" class="icon"> Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
+      <p><img src="location.png" class="icon"> <a href="https://maps.app.goo.gl/jdeEJNWJVLsubh8D8" target="_blank">Locate Us</a></p>
+      <p><img src="phone.png" class="icon"> <a href="tel:7892520467">7892520467</a></p>
+      <p><img src="email.jpg" class="icon"> <a href="mailto:naveenjai
