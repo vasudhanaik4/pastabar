@@ -1,3 +1,12 @@
+Got it Vasudha — I’ll remove the **Customer Reviews section** completely, keep the footer background **dark green**, and structure the footer into **three adjacent columns** exactly as you described:
+
+1. **Contact Info** — with small icons for Address, Locate Us, Phone, Email  
+2. **Opening Hours** — with clock icon  
+3. **Follow Us** — Instagram logo + handle, and Google Reviews link  
+
+Here’s your **final full code**:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,19 +176,6 @@ h2 {
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Reviews */
-.reviews {
-    text-align:center;
-}
-.reviews iframe {
-    width:100%;
-    max-width:600px;
-    height:400px;
-    border:0;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
 /* Footer */
 footer {
     background:#2f4f2f; /* dark green */
@@ -189,7 +185,7 @@ footer {
 .footer-grid {
     display:flex;
     flex-wrap:wrap;
-    justify-content:space-around;
+    justify-content:space-between;
     gap:30px;
     text-align:left;
 }
@@ -246,7 +242,6 @@ footer {
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>
-        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -295,12 +290,6 @@ footer {
     </div>
 </section>
 
-<!-- Reviews -->
-<section id="reviews" class="reviews">
-    <h2>Customer Reviews</h2>
-    <p><a href="https://www.google.com/search?q=PASTA+BAR+Reviews" target="_blank">View our Google Reviews</a></p>
-</section>
-
 <!-- Footer -->
 <footer>
   <div class="footer-grid">
@@ -308,4 +297,13 @@ footer {
       <h3>Contact Info</h3>
       <p><img src="location-icon.png" class="icon"> Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
       <p><img src="map-icon.png" class="icon"> <a href="https://maps.app.goo.gl/jdeEJNWJVLsubh8D8" target="_blank">Locate Us</a></p>
-      <p><img src="phone-icon.png" class="icon"> <a href="tel:7892520467">789
+      <p><img src="phone-icon.png" class="icon"> <a href="tel:7892520467">7892520467</a></p>
+      <p><img src="email-icon.png" class="icon"> <a href="mailto:naveenjai0105@gmail.com">naveenjai0105@gmail.com</a></p>
+    </div>
+    <div>
+      <h3>Opening Hours</h3>
+      <p><img src="clock-icon.png" class="icon"> Monday to Sunday</p>
+      <p>6 PM to 11:30 PM</p>
+    </div>
+    <div>
+      <
