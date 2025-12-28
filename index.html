@@ -1,300 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Pasta Bar</title>
 <style>
-body {
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#fff;
-    color:#333;
-}
-.highlight {
-    color: #FFD700;
-}
+  :root{
+    --dark-green:#2f4f2f;
+    --accent:#FFD700;
+    --white: #ffffff;
+    --text:#333;
+    --footer-text:#ffffff;
+  }
 
-/* Navigation */
-nav {
-    background:#2f4f2f;
-    color:white;
+  /* Reset & base */
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color:var(--text);
+    background:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  a{color:inherit}
+
+  /* Navigation */
+  nav{
+    background:var(--dark-green);
+    color:var(--white);
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    padding:10px 30px;
+    justify-content:space-between;
+    padding:12px 28px;
     position:sticky;
     top:0;
     z-index:1000;
-}
-nav .logo {
-    display:flex;
-    align-items:center;
-}
-nav .logo img {
-    width:60px;
-    height:auto;
-    border-radius:8px;
-    margin-right:10px;
-}
-nav ul {
-    list-style:none;
-    display:flex;
-    gap:20px;
-}
-nav ul li a {
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-nav ul li a:hover {
-    text-decoration:underline;
-}
+  }
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo img{width:56px;height:auto;border-radius:8px;display:block}
+  .nav-links{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+  .nav-links a{color:var(--white);text-decoration:none;font-weight:600}
+  .nav-links a:hover{text-decoration:underline}
 
-/* Hero Section */
-header {
-    background: url("background.jpg") center/cover no-repeat;
+  /* Hero */
+  header{
+    position:relative;
     height:70vh;
+    min-height:420px;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:white;
-    position:relative;
-}
-header::before {
+    color:var(--white);
+    background: url("background.jpg") center/cover no-repeat;
+  }
+  header::before{
     content:"";
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    background:url("cart.jpg") center no-repeat;
+    position:absolute;inset:0;
+    background:url("cart.jpg") center/contain no-repeat;
+    background-position:center;
     background-size:contain;
-    z-index:0;
-}
-header::after {
+    opacity:1;
+    pointer-events:none;
+  }
+  header::after{
     content:"";
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    background:rgba(0,0,0,0.5);
-    z-index:1;
-}
-header h1, header p {
-    position:relative;
-    z-index:2;
-}
-header h1 {
-    font-size:3em;
-    margin-bottom:10px;
-}
-header p {
-    font-size:1.2em;
-}
+    position:absolute;inset:0;
+    background:rgba(0,0,0,0.45);
+  }
+  header .hero-inner{position:relative;z-index:2;padding:0 20px}
+  header h1{font-size:2.6rem;margin:0 0 8px}
+  header p{margin:0;font-size:1.05rem}
 
-/* Sections */
-section {
-    padding:60px 20px;
-    max-width:1100px;
-    margin:auto;
-}
-h2 {
-    text-align:center;
-    color:#2f4f2f;
-    margin-bottom:30px;
-}
+  .highlight{color:var(--accent)}
 
-/* About */
-.about {
+  /* Sections */
+  section{padding:56px 20px;max-width:1100px;margin:0 auto}
+  h2{color:var(--dark-green);text-align:center;margin-bottom:22px}
+
+  /* About / Founder */
+  .about{
+    display:flex;
+    gap:32px;
+    align-items:center;
+    justify-content:center;
     background:url("founderback.jpg") center/cover no-repeat;
-    padding:60px 20px;
+    padding:40px;
     border-radius:10px;
+    color:var(--text);
+  }
+  .about img{width:200px;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+  .about .text{max-width:640px}
+  .about blockquote{
+    margin:18px 0 0;padding-left:14px;border-left:4px solid var(--accent);
+    color:#444;font-style:italic;
+  }
+
+  /* Menu */
+  .menu-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+  .menu-card{
+    width:220px;border-radius:10px;overflow:hidden;background:#fff;border:1px solid #e6e6e6;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center;
+  }
+  .menu-card img{width:100%;height:200px;object-fit:cover;display:block}
+  .menu-card h3{margin:10px 0;color:var(--dark-green)}
+
+  /* pasta-menu with background */
+  .menu-extra{
+    margin-top:36px;
     display:flex;
+    justify-content:center;
+  }
+  .menu-extra .menu-bg{
+    background:url("menu-background.jpg") center/cover no-repeat;
+    padding:28px;
+    border-radius:12px;
+    display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:40px;
-    color:#333;
-}
-.about img {
-    width:180px;
-    height:auto;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-.about .text {
-    max-width:600px;
-    font-size:18px;
-    line-height:1.6;
-}
-.about .text blockquote {
-    font-style:italic;
-    color:#444;
-    border-left:4px solid #FFD700;
-    padding-left:15px;
-    margin:20px 0;
-}
+  }
+  .menu-extra img{width:560px;max-width:92vw;height:auto;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);display:block}
 
-/* Menu */
-.menu-grid {
+  /* Footer */
+  footer{
+    background:var(--dark-green);
+    color:var(--footer-text);
+    padding:36px 20px;
+  }
+  .footer-grid{
+    max-width:1100px;
+    margin:0 auto;
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-.menu-card {
-    border:1px solid #ddd;
-    border-radius:10px;
-    width:220px;
-    text-align:center;
-    overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-.menu-card img {
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-.menu-card h3 {
-    margin:10px 0;
-    color:#2f4f2f;
-}
-.menu-extra {
-    text-align:center;
-    margin-top:40px;
-}
-.menu-extra img {
-    width:500px;
-    height:auto;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-footer {
-    background:#2f4f2f; /* dark green */
-    color:white;
-    padding:40px 20px;
-}
-.footer-grid {
-    display:flex;
-    flex-wrap:wrap;
+    gap:28px;
     justify-content:space-between;
-    gap:30px;
-    text-align:left;
-}
-.footer-grid div {
-    flex:1;
-    min-width:250px;
-}
-.footer-grid h3 {
-    margin-bottom:15px;
-    color:#FFD700;
-}
-.footer-grid p, .footer-grid a {
-    font-size:16px;
-    color:white;
-    text-decoration:none;
-    margin:8px 0;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+
+  .footer-col{
+    flex:1 1 280px;
+    min-width:220px;
+  }
+  .footer-col h3{margin:0 0 12px;color:var(--accent);font-size:1.05rem}
+  .footer-line{
     display:flex;
     align-items:center;
-}
-.footer-grid a:hover {
-    text-decoration:underline;
-}
-.footer-grid img.icon {
-    width:20px;
-    height:20px;
-    margin-right:10px;
-}
-.footer-bottom {
-    text-align:center;
-    margin-top:30px;
-    font-size:14px;
-    color:#eee;
-}
+    gap:12px;
+    margin:8px 0;
+    color:var(--footer-text);
+    font-size:15px;
+    line-height:1.2;
+    word-break:break-word;
+  }
+  .footer-line img.icon{
+    width:22px;height:22px;display:block;flex:0 0 22px;border-radius:4px;
+    object-fit:cover;
+  }
+  .footer-line a{color:var(--footer-text);text-decoration:underline}
+  .footer-bottom{
+    text-align:center;margin-top:26px;color:#e6e6e6;font-size:14px;
+  }
 
-@media(max-width:800px){
-    .about { flex-direction:column; text-align:center; }
-    .about img { margin-bottom:20px; }
-}
-@media(max-width:600px){
-    nav ul { flex-direction:column; gap:10px; }
-    header h1 { font-size:2em; }
-    .menu-grid { flex-direction:column; align-items:center; }
-}
+  /* Responsive */
+  @media (max-width:900px){
+    .menu-extra img{width:420px}
+    .about{flex-direction:column;text-align:center}
+    .about img{width:160px}
+  }
+  @media (max-width:640px){
+    nav{padding:10px 14px}
+    .nav-links{gap:12px}
+    header{height:56vh}
+    header h1{font-size:1.8rem}
+    .menu-extra img{width:92%}
+    .footer-grid{flex-direction:column;gap:18px}
+  }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
+  <!-- Navigation -->
+  <nav>
     <div class="logo">
-        <img src="logo.jpg" alt="Pasta Bar Logo">
-        <span>Pasta Bar</span>
+      <img src="logo.jpg" alt="Pasta Bar logo">
+      <div style="font-weight:700">Pasta Bar</div>
     </div>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#location">Location</a></li>
+
+    <ul class="nav-links" aria-label="Main navigation">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#location">Location</a></li>
     </ul>
-</nav>
+  </nav>
 
-<!-- Hero -->
-<header id="home">
-    <h1>Welcome to <span class="highlight">Pasta Bar</span></h1>
-    <p>Fresh Italian Pasta • Food Cart Experience</p>
-</header>
+  <!-- Hero -->
+  <header id="home" role="banner">
+    <div class="hero-inner">
+      <h1>Welcome to <span class="highlight">Pasta Bar</span></h1>
+      <p>Fresh Italian Pasta • Food Cart Experience</p>
+    </div>
+  </header>
 
-<!-- About -->
-<section id="about" class="about">
-    <img src="Founder.jpg" alt="Founder Image">
+  <!-- About -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <img src="Founder.jpg" alt="Founder Naveen R">
     <div class="text">
-        <h2>About Us</h2>
-        <p>Pasta Bar started as a humble food cart with a big love for authentic Italian pasta. 
-           We keep our menu simple, balanced, and satisfying — offering pasta and fresh salad made with care.</p>
-        <p><strong>Founder:</strong> Naveen R</p>
-        <blockquote>"Our mission is to bring the taste of Italy to Bangalore, one plate at a time."</blockquote>
+      <h2 id="about-heading">About Us</h2>
+      <p>Pasta Bar started as a humble food cart with a big love for authentic Italian pasta. We keep our menu simple, balanced, and satisfying — offering pasta and fresh salad made with care.</p>
+      <p><strong>Founder:</strong> Naveen R</p>
+      <blockquote>"Our mission is to bring the taste of Italy to Bangalore, one plate at a time."</blockquote>
     </div>
-</section>
+  </section>
 
-<!-- Menu -->
-<section id="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-grid">
-        <div class="menu-card">
-            <img src="Whitesauce.jpg" alt="White Sauce Pasta">
-            <h3>White Sauce Pasta</h3>
-        </div>
-        <div class="menu-card">
-            <img src="Redsauce.jpg" alt="Red Sauce Pasta">
-            <h3>Red Sauce Pasta</h3>
-        </div>
-        <div class="menu-card">
-            <img src="Pinksauce.jpg" alt="Pink Sauce Pasta">
-            <h3>Pink Sauce Pasta</h3>
-        </div>
-        <div class="menu-card">
-            <img src="Salad.JPG" alt="Italian Creamy Veg Salad">
-            <h3>Italian Creamy Veg Salad</h3>
-        </div>
+  <!-- Menu -->
+  <section id="menu" aria-labelledby="menu-heading">
+    <h2 id="menu-heading">Our Menu</h2>
+
+    <div class="menu-grid" role="list">
+      <div class="menu-card" role="listitem">
+        <img src="Whitesauce.jpg" alt="White Sauce Pasta">
+        <h3>White Sauce Pasta</h3>
+      </div>
+      <div class="menu-card" role="listitem">
+        <img src="Redsauce.jpg" alt="Red Sauce Pasta">
+        <h3>Red Sauce Pasta</h3>
+      </div>
+      <div class="menu-card" role="listitem">
+        <img src="Pinksauce.jpg" alt="Pink Sauce Pasta">
+        <h3>Pink Sauce Pasta</h3>
+      </div>
+      <div class="menu-card" role="listitem">
+        <img src="Salad.JPG" alt="Italian Creamy Veg Salad">
+        <h3>Italian Creamy Veg Salad</h3>
+      </div>
     </div>
-    <div class="menu-extra">
+
+    <div class="menu-extra" aria-hidden="false">
+      <div class="menu-bg">
         <img src="pasta-menu.jpg" alt="Full Pasta Menu">
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section id="contact">
-    <h2>Visit / Contact Us</h2>
-    <p style="text-align:center;">#01 Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
-</section>
+  <!-- Contact (simple) -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Visit / Contact Us</h2>
+    <p style="text-align:center;margin-top:6px">#01 Kanakapura Main Road, Opposite Fashion Factory<br>Bangalore 560062</p>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>Contact Info</h3>
-      <p><img src="address.jpg" class="icon"> Kanakapura Main Road, Opposite Fashion Factory, Bangalore 560062</p>
-      <p><img src="location.png" class="icon"> <a href="https://maps.app.goo.gl/jdeEJNWJVLsubh8D8" target="_blank">Locate Us</a></p>
-      <p><img src="phone.png" class="icon"> <a href="tel:7892520467">7892520467</a></p>
-      <p><img src="email.jpg" class="icon"> <a href="mailto:naveenjai
+  <!-- Footer -->
+  <footer aria-labelledby="footer-heading">
+    <div class="footer-grid" role="contentinfo">
+
+      <!-- Contact Info column -->
+      <div class="footer-col" aria-label="Contact information">
+        <h3>Contact Info</h3>
+
+        <!-- Address: two lines as requested -->
+        <div class="footer-line">
+          <img src="address.jpg" class="icon" alt="address icon">
+          <div>
+            <div>Kanakapura Main Road, Opposite Fashion Factory</div>
+            <div>Bangalore 560062</div>
+          </div>
+        </div>
+
+        <!-- Locate URL (show the URL itself as requested) -->
+        <div class="footer-line">
+          <img src="location.png" class="icon" alt="map icon">
+          <div><a href="https://maps.app.goo.gl/jdeEJNWJVLsubh8D8" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/jdeEJNWJVLsubh8D8</a></div>
+        </div>
+
+        <!-- Phone -->
+        <div class="footer-line">
+          <img src="phone.png" class="icon" alt="phone icon">
+          <div><a href="tel:7892520467">7892520467</a></div>
+        </div>
+
+        <!-- Email -->
+        <div class="footer-line">
+          <img src="email.jpg" class="icon" alt="email icon">
+          <div><a href="mailto:naveenjai0105@gmail.com">naveenjai0105@gmail.com</a></div>
+        </div>
+      </div>
+
+      <!-- Opening Hours column -->
+      <div class="footer-col" aria-label="Opening hours">
+        <h3>Opening Hours</h3>
+
+        <div class="footer-line">
+          <img src="timing.png" class="icon" alt="timing icon">
+          <div>Monday to Sunday</div>
+        </div>
+
+        <div class="footer-line" style="margin-top:6px">
+          <div style="width:34px"></div>
+          <div>6 PM to 11:30 PM</div>
+        </div>
+      </div>
+
+      <!-- Follow Us column -->
+      <div class="footer-col" aria-label="Follow us">
+        <h3>Follow Us</h3>
+
+        <div class="footer-line">
+          <img src="insta.jpg" class="icon" alt="instagram icon">
+          <div><a href="https://instagram.com/pasta_bar_01" target="_blank" rel="noopener noreferrer">@pasta_bar_01</a></div>
+        </div>
+
+        <div class="footer-line" style="margin-top:8px">
+          <img src="insta.jpg" class="icon" alt="reviews icon">
+          <div><a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (Reviews)</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © Pasta Bar. All rights reserved. | Bringing Italy to Your Table
+    </div>
+  </footer>
+
+</body>
+</html>
