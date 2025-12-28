@@ -7,7 +7,7 @@
 <style>
   :root{
     --dark-green:#2f4f2f;
-    --accent:#FFD700; /* yellow accent */
+    --accent:#FFD700;
     --white:#ffffff;
     --text:#333;
     --footer-text:#ffffff;
@@ -71,7 +71,7 @@
   header p{margin:0;font-size:1.05rem}
   .highlight{color:var(--accent)}
 
-  /* Sections - tightened vertical spacing */
+  /* Sections */
   section{
     padding:28px 16px;
     max-width:1100px;
@@ -81,7 +81,7 @@
   }
   h2{color:var(--dark-green);text-align:center;margin-bottom:12px}
 
-  /* About / Founder */
+  /* About */
   .about{
     display:flex;
     gap:16px;
@@ -139,7 +139,7 @@
     display:block;
   }
 
-  /* Reviews section (background set to review.png) */
+  /* Reviews */
   .reviews-block{
     max-width:900px;
     margin:10px auto 18px;
@@ -162,7 +162,7 @@
   .reviews-inner{position:relative;z-index:2;padding:6px}
   .reviews-block h2{
     margin:0 0 8px;
-    color:var(--accent); /* yellow */
+    color:var(--accent);
     font-weight:700;
   }
   .reviews-block p{margin:6px 0;font-size:15px;color:#fff}
@@ -218,7 +218,7 @@
     text-align:center;margin-top:10px;color:#e6e6e6;font-size:13px;
   }
 
-  /* Mobile adjustments: make footer compact and remove large gaps */
+  /* Mobile: compact footer spacing to match snip */
   @media (max-width:900px){
     .menu-extra img{width:320px}
     .about{flex-direction:column;text-align:center;padding:18px}
@@ -232,33 +232,30 @@
     .menu-card{width:48%}
   }
 
-  @media (max-width:640px){
-    nav{padding:10px 12px}
-    .nav-links{gap:10px}
-    header{height:52vh}
-    header h1{font-size:1.6rem}
+  /* Very small screens: stack but keep minimal vertical gaps */
+  @media (max-width:480px){
     .menu-extra img{width:92%}
-    /* stack columns but keep them compact with minimal spacing */
+    .about img{width:120px}
+    .reviews-block{margin:6px auto 10px;padding:10px}
+    footer{padding:12px 10px}
     .footer-grid{
       flex-direction:column;
-      gap:6px;
+      gap:6px;               /* minimal gap between columns */
       align-items:stretch;
     }
     .footer-col{
-      margin-bottom:6px;
-      padding:6px 0;
+      margin:0;              /* remove extra margins */
+      padding:6px 0;         /* small internal padding */
     }
+    .footer-col h3{margin-bottom:6px;font-size:1rem}
+    .footer-line{margin:4px 0;gap:8px;font-size:13px}
     .footer-line img.icon{width:18px;height:18px;flex:0 0 18px}
-    .footer-line{gap:8px;font-size:13px;margin:4px 0}
     .footer-bottom{margin-top:6px;font-size:13px;padding-top:6px}
-    section{padding:18px 12px;margin-bottom:10px}
-    .about{padding:14px}
   }
 </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="logo">
       <img src="logo.jpg" alt="Pasta Bar logo">
@@ -273,7 +270,6 @@
     </ul>
   </nav>
 
-  <!-- Hero -->
   <header id="home" role="banner">
     <div class="hero-inner">
       <h1>Welcome to <span class="highlight">Pasta Bar</span></h1>
@@ -281,7 +277,6 @@
     </div>
   </header>
 
-  <!-- About -->
   <section id="about" class="about" aria-labelledby="about-heading">
     <img src="Founder.jpg" alt="Founder Naveen R">
     <div class="text">
@@ -292,7 +287,6 @@
     </div>
   </section>
 
-  <!-- Menu -->
   <section id="menu" aria-labelledby="menu-heading">
     <h2 id="menu-heading">Our Menu</h2>
 
@@ -322,7 +316,6 @@
     </div>
   </section>
 
-  <!-- Reviews -->
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
     <div class="reviews-inner">
       <h2 id="reviews-heading">Review</h2>
@@ -330,11 +323,9 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer aria-labelledby="footer-heading">
     <div class="footer-grid" role="contentinfo">
 
-      <!-- Contact Info column -->
       <div id="footer-contact" class="footer-col" aria-label="Contact information">
         <h3>Contact Info</h3>
 
@@ -362,7 +353,6 @@
         </div>
       </div>
 
-      <!-- Opening Hours column -->
       <div class="footer-col" aria-label="Opening hours">
         <h3>Opening Hours</h3>
 
@@ -377,7 +367,6 @@
         </div>
       </div>
 
-      <!-- Follow Us column -->
       <div class="footer-col" aria-label="Follow us">
         <h3>Follow Us</h3>
 
