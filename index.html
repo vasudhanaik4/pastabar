@@ -1,3 +1,7 @@
+**Finalizing HTML code**
+
+Alright, I need to make sure the footer columns are adjacent, and I’ll use the provided image filenames: address.jpg, location.png, phone.png, email.jpg, timing.png, and insta.jpg. For the pasta-menu container, I’ll apply the menu-background image and adjust the size to maybe 560px. I also need to ensure everything is responsive. Once I’ve got all that, I’ll put together the final code block. Let’s get this done!
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +12,17 @@
   :root{
     --dark-green:#2f4f2f;
     --accent:#FFD700;
-    --white: #ffffff;
+    --white:#ffffff;
     --text:#333;
     --footer-text:#ffffff;
   }
 
-  /* Reset & base */
   *{box-sizing:border-box}
   body{
     margin:0;
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     color:var(--text);
     background:#fff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
   }
   a{color:inherit}
 
@@ -59,9 +60,7 @@
     content:"";
     position:absolute;inset:0;
     background:url("cart.jpg") center/contain no-repeat;
-    background-position:center;
     background-size:contain;
-    opacity:1;
     pointer-events:none;
   }
   header::after{
@@ -72,7 +71,6 @@
   header .hero-inner{position:relative;z-index:2;padding:0 20px}
   header h1{font-size:2.6rem;margin:0 0 8px}
   header p{margin:0;font-size:1.05rem}
-
   .highlight{color:var(--accent)}
 
   /* Sections */
@@ -122,6 +120,20 @@
   }
   .menu-extra img{width:560px;max-width:92vw;height:auto;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);display:block}
 
+  /* Reviews section (after menu) */
+  .reviews-block{
+    max-width:900px;
+    margin:36px auto 0;
+    text-align:center;
+    padding:18px;
+    border-radius:10px;
+    background:#fafafa;
+    box-shadow:0 6px 18px rgba(0,0,0,0.04);
+  }
+  .reviews-block h2{margin:0 0 10px;color:var(--dark-green)}
+  .reviews-block p{margin:6px 0;font-size:16px}
+  .reviews-block a{color:var(--dark-green);text-decoration:underline}
+
   /* Footer */
   footer{
     background:var(--dark-green);
@@ -154,8 +166,7 @@
     word-break:break-word;
   }
   .footer-line img.icon{
-    width:22px;height:22px;display:block;flex:0 0 22px;border-radius:4px;
-    object-fit:cover;
+    width:22px;height:22px;display:block;flex:0 0 22px;border-radius:4px;object-fit:cover;
   }
   .footer-line a{color:var(--footer-text);text-decoration:underline}
   .footer-bottom{
@@ -191,7 +202,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#location">Location</a></li>
     </ul>
   </nav>
@@ -245,10 +256,10 @@
     </div>
   </section>
 
-  <!-- Contact (simple) -->
-  <section id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Visit / Contact Us</h2>
-    <p style="text-align:center;margin-top:6px">#01 Kanakapura Main Road, Opposite Fashion Factory<br>Bangalore 560062</p>
+  <!-- Reviews (replaces Visit / Contact Us) -->
+  <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
+    <h2 id="reviews-heading">Review</h2>
+    <p>Click here - <a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
   </section>
 
   <!-- Footer -->
@@ -259,7 +270,6 @@
       <div class="footer-col" aria-label="Contact information">
         <h3>Contact Info</h3>
 
-        <!-- Address: two lines as requested -->
         <div class="footer-line">
           <img src="address.jpg" class="icon" alt="address icon">
           <div>
@@ -268,19 +278,16 @@
           </div>
         </div>
 
-        <!-- Locate URL (show the URL itself as requested) -->
         <div class="footer-line">
           <img src="location.png" class="icon" alt="map icon">
           <div><a href="https://maps.app.goo.gl/jdeEJNWJVLsubh8D8" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/jdeEJNWJVLsubh8D8</a></div>
         </div>
 
-        <!-- Phone -->
         <div class="footer-line">
           <img src="phone.png" class="icon" alt="phone icon">
           <div><a href="tel:7892520467">7892520467</a></div>
         </div>
 
-        <!-- Email -->
         <div class="footer-line">
           <img src="email.jpg" class="icon" alt="email icon">
           <div><a href="mailto:naveenjai0105@gmail.com">naveenjai0105@gmail.com</a></div>
@@ -297,7 +304,7 @@
         </div>
 
         <div class="footer-line" style="margin-top:6px">
-          <div style="width:34px"></div>
+          <div style="width:22px"></div>
           <div>6 PM to 11:30 PM</div>
         </div>
       </div>
@@ -311,11 +318,6 @@
           <div><a href="https://instagram.com/pasta_bar_01" target="_blank" rel="noopener noreferrer">@pasta_bar_01</a></div>
         </div>
 
-        <div class="footer-line" style="margin-top:8px">
-          <img src="insta.jpg" class="icon" alt="reviews icon">
-          <div><a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (Reviews)</a></div>
-        </div>
-
       </div>
     </div>
 
@@ -326,3 +328,4 @@
 
 </body>
 </html>
+```
