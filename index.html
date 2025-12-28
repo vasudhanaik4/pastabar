@@ -1,3 +1,15 @@
+**Implementing changes**
+
+Okay, so for the address, I’ll set the first line as "Kanakapura Main Road, Opposite" and the second line as "Factory, Bangalore 560062." 
+
+For the reviews section, I’ll make sure "Click here" is bold but not underlined, and only the URL is underlined. I’ll also add the background image "review.jpg" with a light overlay for readability.
+
+For the pasta menu image, I’ll resize it to 520px and adjust the CSS accordingly.
+
+I’ll remove the Contact section entirely, but keep the Contact link in the header, linking to the footer. 
+
+Finally, I’ll ensure the footer columns are visible and adjust the icons.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +68,6 @@
     content:"";
     position:absolute;inset:0;
     background:url("cart.jpg") center/contain no-repeat;
-    background-position:center;
     background-size:contain;
     pointer-events:none;
   }
@@ -110,35 +121,47 @@
   .menu-extra .menu-bg{
     background:url("menu-background.jpg") center/cover no-repeat;
     background-size:cover;
-    padding:48px 64px; /* increased padding so background covers more outer area */
+    padding:40px 48px;
     border-radius:12px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     box-shadow:0 8px 24px rgba(0,0,0,0.08);
   }
+  /* pasta-menu image slightly smaller as requested */
   .menu-extra img{
-    width:720px;
-    max-width:94vw;
+    width:520px;
+    max-width:92vw;
     height:auto;
     border-radius:10px;
     box-shadow:0 8px 24px rgba(0,0,0,0.12);
     display:block;
   }
 
-  /* Reviews section (after menu) */
+  /* Reviews section (after menu) with background image review.jpg */
   .reviews-block{
     max-width:900px;
     margin:36px auto 0;
     text-align:center;
-    padding:18px;
+    padding:28px;
     border-radius:10px;
-    background:#fafafa;
-    box-shadow:0 6px 18px rgba(0,0,0,0.04);
+    background: url("review.jpg") center/cover no-repeat;
+    background-size:cover;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
   }
-  .reviews-block h2{margin:0 0 10px;color:var(--dark-green)}
-  .reviews-block p{margin:6px 0;font-size:16px}
-  .reviews-block a{color:var(--dark-green);text-decoration:underline;font-weight:700}
+  /* subtle dark overlay for readability */
+  .reviews-block::after{
+    content:"";
+    position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:10px;
+  }
+  .reviews-inner{position:relative;z-index:2}
+  .reviews-block h2{margin:0 0 10px;color:#fff}
+  .reviews-block p{margin:6px 0;font-size:16px;color:#fff}
+  /* Click here bold and not underlined; link after it underlined */
+  .reviews-block strong{font-weight:700;text-decoration:none;color:#fff}
+  .reviews-block a{color:#fff;text-decoration:underline}
 
   /* Footer */
   footer{
@@ -197,7 +220,7 @@
 </head>
 <body>
 
-  <!-- Navigation (only About, Menu, Reviews, Contact) -->
+  <!-- Navigation (About, Menu, Reviews, Contact) -->
   <nav>
     <div class="logo">
       <img src="logo.jpg" alt="Pasta Bar logo">
@@ -208,7 +231,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#footer-contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -263,29 +286,25 @@
 
   <!-- Reviews (replaces Visit / Contact Us) -->
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
-    <h2 id="reviews-heading">Review</h2>
-    <p><a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer"><strong>Click here</strong> - https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
-  </section>
-
-  <!-- Contact (anchor target for nav) -->
-  <section id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading" style="text-align:center;color:var(--dark-green)">Contact</h2>
-    <p style="text-align:center;margin-top:6px">#01 Kanakapura Main Road, Opposite Fashion Factory<br>Bangalore 560062</p>
+    <div class="reviews-inner">
+      <h2 id="reviews-heading">Review</h2>
+      <p><strong>Click here</strong> - <a href="https://www.google.com/search?sca_esv=2c3bccec84ab9d2f&cs=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EzP0VY4UduF1T0atD9C6OZ-jvaWVnqqdBKev2ZA4NbaK2d3bA6srkh5RHifEFN19f32u08TCE5V8wqJxkbeZK7gA5u3v&q=PASTA+BAR+Reviews&sa=X&ved=2ahUKEwiursexpeCRAxVdTWwGHcUgLGcQ0bkNegQIIBAD&biw=1272&bih=668&dpr=1.5" target="_blank" rel="noopener noreferrer">https://www.google.com/search?sca_esv=2c3bccec84ab9d2f... (PASTA BAR Reviews)</a></p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer aria-labelledby="footer-heading">
     <div class="footer-grid" role="contentinfo">
 
-      <!-- Contact Info column (two-line address) -->
-      <div class="footer-col" aria-label="Contact information">
+      <!-- Contact Info column (two-line address with requested split) -->
+      <div id="footer-contact" class="footer-col" aria-label="Contact information">
         <h3>Contact Info</h3>
 
         <div class="footer-line">
           <img src="address.jpg" class="icon" alt="address icon">
           <div>
-            <div>Kanakapura Main Road, Opposite Fashion Factory</div>
-            <div>Bangalore 560062</div>
+            <div>Kanakapura Main Road, Opposite</div>
+            <div>Factory, Bangalore 560062</div>
           </div>
         </div>
 
