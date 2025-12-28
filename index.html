@@ -51,7 +51,7 @@
     text-align:center;
     color:var(--white);
     background: url("background.jpg") center/cover no-repeat;
-    margin-bottom:28px; /* space so header background doesn't collide with next section */
+    margin-bottom:28px;
   }
   header::before{
     content:"";
@@ -73,38 +73,38 @@
 
   /* Sections - tightened vertical spacing */
   section{
-    padding:40px 20px;            /* reduced from 56px to 40px */
+    padding:36px 20px;
     max-width:1100px;
-    margin:0 auto 20px;           /* smaller bottom margin between sections */
+    margin:0 auto 18px;
     position:relative;
     z-index:1;
   }
-  h2{color:var(--dark-green);text-align:center;margin-bottom:18px}
+  h2{color:var(--dark-green);text-align:center;margin-bottom:16px}
 
   /* About / Founder */
   .about{
     display:flex;
-    gap:24px;                     /* slightly smaller gap */
+    gap:20px;
     align-items:center;
     justify-content:center;
     background:url("founderback.jpg") center/cover no-repeat;
     background-position:center top;
     background-size:cover;
     background-repeat:no-repeat;
-    padding:36px;                 /* reduced padding to tighten vertical space */
+    padding:32px;
     border-radius:10px;
     color:var(--text);
     box-shadow:0 8px 30px rgba(0,0,0,0.06);
   }
-  .about img{width:180px;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+  .about img{width:170px;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
   .about .text{max-width:640px}
   .about blockquote{
-    margin:14px 0 0;padding-left:12px;border-left:4px solid var(--accent);
+    margin:12px 0 0;padding-left:12px;border-left:4px solid var(--accent);
     color:#444;font-style:italic;
   }
 
   /* Menu */
-  .menu-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+  .menu-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
   .menu-card{
     width:220px;border-radius:10px;overflow:hidden;background:#fff;border:1px solid #e6e6e6;
     box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center;
@@ -112,9 +112,9 @@
   .menu-card img{width:100%;height:200px;object-fit:cover;display:block}
   .menu-card h3{margin:10px 0;color:var(--dark-green)}
 
-  /* pasta-menu with background - ensure spacing and no collision */
+  /* pasta-menu with background - spacing adjusted */
   .menu-extra{
-    margin-top:18px;              /* reduced gap above pasta-menu */
+    margin-top:12px;
     display:flex;
     justify-content:center;
   }
@@ -123,16 +123,16 @@
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat;
-    padding:28px 36px;            /* reduced padding so background doesn't push too far */
+    padding:20px 28px;
     border-radius:12px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     box-shadow:0 8px 24px rgba(0,0,0,0.08);
-    margin-bottom:12px;           /* small space below menu background */
+    margin-bottom:12px;
   }
   .menu-extra img{
-    width:480px;                  /* made a bit smaller as requested */
+    width:420px;
     max-width:94vw;
     height:auto;
     border-radius:10px;
@@ -143,9 +143,9 @@
   /* Reviews section (after menu) with background image review.jpg */
   .reviews-block{
     max-width:900px;
-    margin:18px auto 28px;        /* reduced top margin and added bottom margin to create space to footer */
+    margin:12px auto 22px; /* reduced top margin and added bottom margin to create space to footer */
     text-align:center;
-    padding:22px;
+    padding:18px;
     border-radius:10px;
     background: url("review.jpg") center/cover no-repeat;
     background-position:center;
@@ -162,7 +162,12 @@
     position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:10px;
   }
   .reviews-inner{position:relative;z-index:2;padding:8px}
-  .reviews-block h2{margin:0 0 8px;color:#fff}
+  /* Review heading in green bold as requested */
+  .reviews-block h2{
+    margin:0 0 8px;
+    color:var(--dark-green);
+    font-weight:700;
+  }
   .reviews-block p{margin:6px 0;font-size:16px;color:#fff}
   /* Click here bold and not underlined; link after it underlined */
   .reviews-block strong{font-weight:700;text-decoration:none;color:#fff}
@@ -172,55 +177,67 @@
   footer{
     background:var(--dark-green);
     color:var(--footer-text);
-    padding:36px 20px;
-    margin-top:18px;              /* small gap above footer to separate from reviews */
+    padding:24px 16px; /* reduced padding for mobile friendliness */
+    margin-top:12px;
   }
   .footer-grid{
     max-width:1100px;
     margin:0 auto;
     display:flex;
-    gap:28px;
+    gap:18px;
     justify-content:space-between;
     align-items:flex-start;
     flex-wrap:wrap;
   }
 
   .footer-col{
-    flex:1 1 280px;
-    min-width:220px;
+    flex:1 1 220px;
+    min-width:180px;
+    margin-bottom:6px;
   }
-  .footer-col h3{margin:0 0 12px;color:var(--accent);font-size:1.05rem}
+  .footer-col h3{margin:0 0 10px;color:var(--accent);font-size:1.02rem}
   .footer-line{
     display:flex;
     align-items:center;
-    gap:12px;
-    margin:8px 0;
+    gap:10px;
+    margin:6px 0;
     color:var(--footer-text);
-    font-size:15px;
+    font-size:14px;
     line-height:1.2;
     word-break:break-word;
   }
   .footer-line img.icon{
-    width:22px;height:22px;display:block;flex:0 0 22px;border-radius:4px;object-fit:cover;
+    width:20px;height:20px;display:block;flex:0 0 20px;border-radius:4px;object-fit:cover;
   }
   .footer-line a{color:var(--footer-text);text-decoration:underline}
   .footer-bottom{
-    text-align:center;margin-top:26px;color:#e6e6e6;font-size:14px;
+    text-align:center;margin-top:14px;color:#e6e6e6;font-size:13px;
   }
 
-  /* Responsive */
+  /* Responsive adjustments to remove large gaps on mobile */
   @media (max-width:900px){
-    .menu-extra img{width:420px}
-    .about{flex-direction:column;text-align:center}
-    .about img{width:160px}
+    .menu-extra img{width:360px}
+    .about{flex-direction:column;text-align:center;padding:24px}
+    .about img{width:150px}
+    .reviews-block{margin:10px auto 18px;padding:14px}
+    footer{padding:20px 12px}
+    .footer-grid{gap:12px}
+    .footer-col{min-width:unset}
+    .footer-line{gap:8px;font-size:14px}
+    .menu-card{width:48%}
   }
+
   @media (max-width:640px){
     nav{padding:10px 14px}
     .nav-links{gap:12px}
     header{height:56vh}
     header h1{font-size:1.8rem}
     .menu-extra img{width:92%}
-    .footer-grid{flex-direction:column;gap:18px}
+    .footer-grid{flex-direction:column;gap:10px}
+    .footer-col{margin-bottom:4px}
+    .footer-bottom{margin-top:10px;font-size:13px}
+    section{padding:24px 14px;margin-bottom:12px}
+    .about{padding:18px}
   }
 </style>
 </head>
@@ -290,7 +307,7 @@
     </div>
   </section>
 
-  <!-- Reviews (replaces Visit / Contact Us) -->
+  <!-- Reviews -->
   <section id="reviews" class="reviews-block" aria-labelledby="reviews-heading">
     <div class="reviews-inner">
       <h2 id="reviews-heading">Review</h2>
@@ -302,7 +319,7 @@
   <footer aria-labelledby="footer-heading">
     <div class="footer-grid" role="contentinfo">
 
-      <!-- Contact Info column (two-line address with requested split) -->
+      <!-- Contact Info column -->
       <div id="footer-contact" class="footer-col" aria-label="Contact information">
         <h3>Contact Info</h3>
 
@@ -340,7 +357,7 @@
         </div>
 
         <div class="footer-line" style="margin-top:6px">
-          <div style="width:22px"></div>
+          <div style="width:20px"></div>
           <div>6 PM to 11:30 PM</div>
         </div>
       </div>
